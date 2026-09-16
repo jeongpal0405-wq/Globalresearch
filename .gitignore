@@ -1,0 +1,33 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Generated reports and locally collected / derived data
+/_out/
+/data/*
+!/data/series_map.json
+
+# Local backups and editor / OS files
+*.bak
+*.tmp
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,7 +1,7 @@
 """Synthetic calculation checks; no production data or network access.
 
 These tests do not validate source selection, vintage handling, user
-clarification, or report generation. See docs/VALIDATION.md for those cases.
+clarification, or report generation. See VALIDATION.md for those cases.
 """
 
 import importlib.util

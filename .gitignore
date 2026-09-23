@@ -19,6 +19,7 @@ venv/
 
 # Generated reports and locally collected / derived data
 /_out/
+/tmp/
 /data/*
 !/data/series_map.json
 

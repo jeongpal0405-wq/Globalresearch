@@ -1,6 +1,6 @@
 # AGENTS.md
 
-현재 작업 폴더 `AI 업무 개선/`가 실제 프로젝트 루트다. `AGENTS.md`, `ANALYSIS_METHOD.md`, `VALIDATION.md`, `README.md`는 모두 루트에 있다. `scripts/`, `tests/`, `data/`, `_out/`도 이 루트 아래에 있으며, 같은 이름의 하위 프로젝트 폴더나 `docs/`에서 지침을 찾지 않는다.
+이 AGENTS.md가 있는 저장소 디렉터리가 실제 프로젝트 루트다. 현재 로컬 폴더 이름은 `AI 업무 개선/`이며, 다른 PC나 클라우드에서는 체크아웃 경로가 달라도 같은 기준을 적용한다. `AGENTS.md`, `ANALYSIS_METHOD.md`, `VALIDATION.md`, `README.md`는 모두 루트에 있다. `scripts/`, `tests/`, `data/`, `_out/`도 이 루트 아래에 있으며, 같은 이름의 하위 프로젝트 폴더나 `docs/`에서 지침을 찾지 않는다.
 
 ## 작업 시작 전 필수 확인
 
@@ -11,13 +11,23 @@
 
 ### GitHub 최신 지침 확인
 
-지침의 기준 저장소는 [jeongpal0405-wq/Globalresearch](https://github.com/jeongpal0405-wq/Globalresearch), 기준 브랜치는 `main`이다. 로컬 AGENTS.md는 Codex가 이 확인 절차를 시작하는 진입점이다. 사용자가 별도로 GitHub 조회를 요청하지 않아도 아래 절차를 수행한다.
+지침의 기준 저장소는 [jeongpal0405-wq/Globalresearch](https://github.com/jeongpal0405-wq/Globalresearch), 기준 브랜치는 `main`이다. 로컬 또는 클라우드에 체크아웃된 AGENTS.md는 Codex가 이 확인 절차를 시작하는 진입점이다. 사용자가 별도로 GitHub 조회를 요청하지 않아도 아래 절차를 수행한다. **특정 GitHub 플러그인은 필수 조건이 아니다.**
 
-1. 연결된 GitHub 플러그인의 `github_fetch`로 `https://api.github.com/repos/jeongpal0405-wq/Globalresearch/git/ref/heads/main`을 조회한다. 응답의 `object.sha`를 이번 작업의 지침 커밋으로 기록한다. 로컬 `origin/main`이나 이전 대화의 커밋을 최신판이라고 간주하지 않는다.
-2. `github_fetch_file`에 `repository_full_name="jeongpal0405-wq/Globalresearch"`, `path="AGENTS.md"`, `ref=확인한 전체 커밋 SHA`를 지정해 원문 전체를 읽는다. 이어서 작업에 필요한 `ANALYSIS_METHOD.md`, `VALIDATION.md`, `README.md`도 반드시 같은 SHA로 읽는다. 지침 확인을 위한 도구 탐색은 허용한다.
+1. 사용 가능한 승인된 연결로 기준 저장소의 `main` 최신 전체 커밋 SHA를 조회해 이번 작업의 지침 커밋으로 기록한다. GitHub 플러그인이 있으면 `github_fetch`를 사용할 수 있다. 도구가 없거나 호출에 실패하면 아래 HTTPS 또는 Git 경로를 확인한다. 플러그인 도구나 MCP 리소스가 없다는 이유만으로 GitHub 조회 불가라고 결론내리지 않는다. 로컬 `origin/main`, 체크아웃된 `HEAD`, 이전 대화의 커밋을 조회 없이 최신판이라고 간주하지 않는다.
+2. 확인한 SHA의 AGENTS.md 원문 전체를 읽고, 작업에 필요한 `ANALYSIS_METHOD.md`, `VALIDATION.md`, `README.md`도 반드시 같은 SHA로 읽는다. 플러그인의 `github_fetch_file`을 사용한다면 `repository_full_name="jeongpal0405-wq/Globalresearch"`, `path=문서명`, `ref=확인한 전체 SHA`를 지정한다. 다른 경로에서도 문서마다 `main`을 다시 읽지 않고 확인한 SHA에 고정한다. 지침 확인을 위한 도구 탐색·네트워크 조회·임시 저장은 허용한다.
 3. GitHub에서 읽은 해당 버전의 지침을 이번 작업에 적용한다. 로컬 사본과 다르면 GitHub판을 기준으로 하되, 시스템·개발자 지침과 사용자가 현재 작업에서 명시한 요청·확정 기준을 우선한다. 사용자가 로컬에서 편집 중인 지침은 작업본으로 보존하며 GitHub판으로 덮어쓰거나 폐기하지 않는다.
 4. 작업 시작 안내에 `GitHub 지침 확인: main@짧은 SHA`와 읽은 문서명을 짧게 남긴다. 실제 원문을 읽기 전에는 확인 완료라고 쓰지 않는다. 새 작업이거나 사용자가 지침 갱신을 알리면 다시 조회하고, 같은 작업의 단순 후속 대화에서는 확인한 버전을 유지한다. 이미 원격 AGENTS.md를 읽은 과정에서 이 절차를 다시 만났다고 재귀적으로 재조회하지 않는다.
-5. 플러그인 연결·권한·네트워크 문제나 문서 누락으로 최신판을 확인하지 못하면 원인과 못 읽은 파일을 알린다. 구버전을 최신판처럼 적용하지 않으며, 지침에 의존하는 분석은 보류한다. 연결 복구·지침 확인 작업은 계속할 수 있고, 사용자가 로컬 지침 사용을 명시하면 그 버전과 한계를 표시해 진행한다.
+5. 사용 가능한 승인된 조회 경로로도 최신판을 확인하지 못하면 시도한 경로·실패 원인·못 읽은 파일을 알린다. 네트워크나 권한 제한을 우회하지 않는다. 구버전을 최신판처럼 적용하지 않으며, 지침에 의존하는 분석은 보류한다. 연결 복구·지침 확인 작업은 계속할 수 있다. 사용자가 현재 체크아웃된 문서 사용을 명시하면 해당 커밋과 미커밋 수정 여부를 확인하고 `체크아웃 지침 사용: <SHA> — 원격 최신 여부 미확인`으로 표시해 진행한다.
+
+#### 플러그인 없이 조회하는 방법
+
+- **GitHub 공식 HTTPS API:** 사용 가능한 `curl`, Python 표준 라이브러리, PowerShell 등으로 `GET https://api.github.com/repos/jeongpal0405-wq/Globalresearch/git/ref/heads/main`을 요청하고 `object.sha`를 읽는다. 각 문서는 `GET https://api.github.com/repos/jeongpal0405-wq/Globalresearch/contents/<문서명>?ref=<전체 SHA>`로 요청한다. 응답의 `encoding`이 `base64`이면 `content`를 디코딩해 UTF-8 원문 전체를 읽는다. HTTP 오류나 예상과 다른 응답을 문서 원문으로 취급하지 않는다.
+- **Git:** `git ls-remote https://github.com/jeongpal0405-wq/Globalresearch.git refs/heads/main`으로 원격 SHA를 확인한다. 해당 커밋 객체가 있는 저장소에서 `git show <전체 SHA>:<문서명>`으로 원문을 읽는다. 객체가 없으면 별도의 임시 저장소에 필요한 커밋을 fetch한다. 지침 조회를 위해 사용자의 작업 폴더에서 pull·checkout·reset하거나 편집 중인 파일을 덮어쓰지 않는다. 임의의 `origin`을 기준 저장소로 가정하지 않는다.
+- 한 경로가 실패해도 다른 승인된 경로를 사용할 수 있다. 실제로 조회한 경로와 SHA를 기록하며, 도구 설치나 네트워크 설정 변경이 이미 이루어졌다고 가정하지 않는다.
+
+#### 클라우드에서 사용할 때
+
+클라우드에 저장소가 체크아웃되어 있다는 사실과 에이전트가 실행 중 GitHub에 다시 접속할 수 있다는 사실은 별개다. 시작 단계에서 위 조회 경로의 사용 가능 여부를 확인한다. HTTPS API 경로는 `api.github.com`에 대한 GET 접근이 필요하다. 접근이 차단되어 있으면 필요한 환경 설정을 안내하며, 에이전트가 임의로 인터넷 접근 범위를 넓히지 않는다. 체크아웃 문서를 읽을 수 있는 상태도 원격 최신판 확인 성공과 구분한다.
 
 이 절차는 Codex가 지침에 따라 GitHub를 조회하는 방식이다. 별도 프로그램이나 `SessionStart` 훅을 설치한 것은 아니다. 지침 조회 자체는 로컬 파일 수정·전체 저장소 동기화·자동 커밋·자동 업로드를 수행하지 않는다.
 

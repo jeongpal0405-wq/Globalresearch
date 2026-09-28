@@ -90,4 +90,20 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 테스트는 인공 가격으로 기존 계산 함수를 확인하며 외부 데이터 조회를 하지 않습니다. 통과해도 출처·발표 당시 값·대화 흐름·보고서까지 검증된 것은 아닙니다. 범위와 실행 상태는 VALIDATION.md에서 확인합니다.
 
+## 미국 중간선거 하원 탈환 보고서 재생성
+
+2015년 이후 미국 중간선거에서 대통령 야당이 하원을 탈환한 사례의 미국채
+10년물 금리 변화와 S&P 500 수익률 보고서는 아래 명령으로 원자료 수집부터
+PDF 검증까지 한 번에 다시 실행할 수 있습니다.
+
+```text
+bash scripts/build_midterm_house_report.sh
+```
+
+명령은 미국 하원 역사가실의 선거 자료, FRED의 DGS10·SP500 CSV와 보고서용
+Noto Sans KR 글꼴을 내려받고 각 파일의 URL·크기·SHA-256을
+`data/midterm_house_20260928/source_manifest.json`에 기록합니다. 완성된 PDF는
+`_out/midterm_house_20260928/midterm_house_report.pdf`에 생성됩니다. `data/`의
+수집 원본과 `_out/`의 생성 보고서는 저장소 정책에 따라 Git에 포함하지 않습니다.
+
 Git 업로드 준비는 프로젝트 보관·변경 이력 관리를 위한 작업이며, 새 출처 정책 적용이나 범용 시나리오 분석 기능 구현을 의미하지 않습니다.

@@ -197,3 +197,4 @@ G01·G05·G06의 조회 검증은 각각 사용한 연결과 환경에 한정한
 - `scripts/report_midterm_house.py`로 Noto Sans KR을 내장한 A4 세로 PDF 4면을 작성함. PyPDF로 4면, 필수 사례·수치·한계 문구를 확인하고 PyMuPDF로 전 면을 893×1263 PNG로 렌더링한 뒤 몽타주에서 잘림·겹침·깨진 글자 없이 확인함.
 - 결과: 2018·2022년 평균 DGS10 변화는 1일 -1.0bp, 7일 -23.0bp, 15일 -40.0bp이고, SP500 평균은 각각 0.0%, +1.1%, +3.1%임. 표본 2건, 최종 의석을 이용한 사후 분류, 수정 가능한 과거 계열, 중첩 비교군, 동시 사건 미통제로 인해 인과효과·유의성·실시간 매매 가능성을 검증한 분석으로 표현하지 않음.
 - 산출물은 `_out/midterm_house_20260928/`의 `analysis.json`, `verification.json`, 렌더 이미지와 `midterm_house_report.pdf`이며 원본은 `data/midterm_house_20260928/`에 보존함. 두 경로는 기존 Git 제외 범위 안이며 코드·인공자료 테스트·본 검증 기록만 버전 관리함.
+- 후속 보완: PR에 PDF가 보이지 않는다는 피드백에 따라 `scripts/prepare_midterm_house.py`와 `scripts/build_midterm_house_report.sh`를 추가함. 새 체크아웃에서도 공식 원자료·글꼴 수집, SHA-256 매니페스트 작성, 분석, 4면 PDF 생성 및 검증을 한 명령으로 수행함. 생성 PDF는 기존 Git 제외 정책을 유지하며 사용자 전달 시 `_out/midterm_house_20260928/midterm_house_report.pdf`의 다운로드 링크를 별도로 제공함.

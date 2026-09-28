@@ -20,12 +20,13 @@ FONT_DIR = ROOT / "data" / "midterm_house_20260928" / "fonts"
 
 
 def register_fonts() -> None:
-    regular = FONT_DIR / "NotoSansCJKkr-Regular.otf"
-    bold = FONT_DIR / "NotoSansCJKkr-Bold.otf"
-    if not regular.exists() or not bold.exists():
-        raise FileNotFoundError("Download the Noto Sans CJK KR regular and bold fonts into the study font directory")
-    pdfmetrics.registerFont(TTFont("NotoKR", regular))
-    pdfmetrics.registerFont(TTFont("NotoKRBold", bold))
+    font = FONT_DIR / "NotoSansKR.ttf"
+    if not font.exists():
+        raise FileNotFoundError(
+            "Run scripts/prepare_midterm_house.py to download Noto Sans KR"
+        )
+    pdfmetrics.registerFont(TTFont("NotoKR", font))
+    pdfmetrics.registerFont(TTFont("NotoKRBold", font))
 
 
 def fmt(value: str, suffix: str) -> str:
